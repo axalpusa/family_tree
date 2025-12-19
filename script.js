@@ -9,7 +9,7 @@ const familyData = {
         dislikes: ["modern technology", "fast food", "loud music"],
         skills: "She is cooking delicious traditional meals. She is telling interesting stories about the past.",
         feelings: "She is feeling happy when the family visits. She is missing her husband. She is proud of her daughter and grandchildren.",
-        icon: "fas fa-female",
+        image: "img/leonila.jpg",
         color: "#2c5282",
         connections: [
             { type: "child", name: "Maritza Salazar Chiroque", relation: "Daughter" },
@@ -26,7 +26,7 @@ const familyData = {
         dislikes: ["loud noises", "disorganization", "wasting money"],
         skills: "He is fixing things around the house. He is cooking. He works as a merchant.",
         feelings: "He is feeling proud of his children. He is happy with his life. He is sometimes tired from work.",
-        icon: "fas fa-male",
+        image: "img/jose.jpg",
         color: "#4c8bf5",
         connections: [
             { type: "spouse", name: "Maritza Salazar Chiroque", relation: "Wife" },
@@ -46,7 +46,7 @@ const familyData = {
         dislikes: ["messiness", "disrespect", "being late"],
         skills: "She is managing the household. She is gardening beautifully.",
         feelings: "She is feeling happy when the family is together. She is worried about her children sometimes. She is loving her role as a grandmother.",
-        icon: "fas fa-female",
+        image: "img/maritza.jpeg",
         color: "#4c8bf5",
         connections: [
             { type: "spouse", name: "José M. Puertas Rondoy", relation: "Husband" },
@@ -67,7 +67,7 @@ const familyData = {
         dislikes: ["stress", "irresponsibility", "bad weather"],
         skills: "She is taking care of her baby. She is working from home.",
         feelings: "She is feeling tired but happy as a new mother. She is loving her son very much. She is adjusting to life as a single mother.",
-        icon: "fas fa-female",
+        image: "img/eyllin.jpeg",
         color: "#2c5282",
         connections: [
             { type: "parent", name: "José Manuel Puertas Rondoy", relation: "Father" },
@@ -89,7 +89,7 @@ const familyData = {
         dislikes: ["monotony", "loud parties", "hot weather"],
         skills: "I am studying web development. I am speaking English. I am helping my family with technology problems.",
         feelings: "I am feeling motivated about my studies. I am happy with my family. I am excited about the future.",
-        icon: "fas fa-user",
+        image: "img/axel.jpg",
         color: "#4c8bf5",
         connections: [
             { type: "parent", name: "José M. Puertas Rondoy", relation: "Father" },
@@ -109,7 +109,7 @@ const familyData = {
         dislikes: ["drama", "impatience", "waking up early"],
         skills: "He is working in sales. He is visiting his children when possible.",
         feelings: "He is feeling happy when he sees his children. He is sometimes stressed about work. He is trying to be a good father.",
-        icon: "fas fa-male",
+        image: "img/diego.jpg",
         color: "#2c5282",
         connections: [
             { type: "parent", name: "José M. Puertas Rondoy", relation: "Father" },
@@ -133,7 +133,7 @@ const familyData = {
         dislikes: ["injustice", "laziness", "wasting time"],
         skills: "She is studying law at university. She is teaching English to students. She is organizing her time very well.",
         feelings: "She is feeling busy with studies and work. She is happy in her relationship with Ricardo. She is excited about her future career.",
-        icon: "fas fa-female",
+        image: "img/ashlly.jpg",
         color: "#4c8bf5",
         connections: [
             { type: "parent", name: "José M. Puertas Rondoy", relation: "Father" },
@@ -154,10 +154,10 @@ const familyData = {
         dislikes: ["homework", "bedtime", "vegetables"],
         skills: "She is learning in school. She is drawing beautiful pictures. She is speaking Spanish.",
         feelings: "She is feeling happy when she visits her father. She is missing her father when he is not there.",
-        icon: "fas fa-child",
+        image: "img/greyshel.jpeg",
         color: "#2c5282",
         connections: [
-            { type: "parent", name: "Diego SteS:fano Puertas Salazar", relation: "Father" },
+            { type: "parent", name: "Diego Stefano Puertas Salazar", relation: "Father" },
             { type: "parent", name: "Unknown", relation: "Mother (Ex-partner of Diego)" },
             { type: "grandparent", name: "José M. Puertas Rondoy", relation: "Grandfather" },
             { type: "grandparent", name: "Maritza Salazar Chiroque", relation: "Grandmother" }
@@ -173,7 +173,7 @@ const familyData = {
         dislikes: ["being hungry", "loud noises", "being wet"],
         skills: "He is learning to smile. He is recognizing voices. He is sleeping most of the day.",
         feelings: "He is feeling comfortable with his mother. He is curious about sounds around him.",
-        icon: "fas fa-baby",
+        image: "img/jaziel.jpg",
         color: "#2c5282",
         connections: [
             { type: "parent", name: "Diego Stefano Puertas Salazar", relation: "Father" },
@@ -192,7 +192,7 @@ const familyData = {
         dislikes: ["being wet", "hunger", "loud sounds"],
         skills: "He is learning to smile. He is recognizing his mother's voice. He is holding his head up.",
         feelings: "He is feeling comfortable with his mother. He is curious about the world around him.",
-        icon: "fas fa-baby",
+        image: "img/neythan.jpg",
         color: "#2c5282",
         connections: [
             { type: "parent", name: "Eyllin M. Puertas Salazar", relation: "Mother" },
@@ -211,7 +211,7 @@ const familyData = {
         dislikes: ["laziness", "bad grades", "inefficiency"],
         skills: "He is teaching mathematics to students. He is working as a petroleum engineer. He is solving complex problems.",
         feelings: "He is feeling happy with Ashlly. He is busy with work and teaching. He is serious about his career.",
-        icon: "fas fa-user-tie",
+        image: "img/ricardo.jpg",
         color: "#4c8bf5",
         connections: [
             { type: "partner", name: "Ashlly T. Puertas Salazar", relation: "Girlfriend" }
@@ -225,6 +225,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const modal = document.getElementById('memberModal');
     const modalClose = document.getElementById('modalClose');
     const modalPhoto = document.getElementById('modalPhoto');
+    const modalImg = document.getElementById('modalImg');
     const modalName = document.getElementById('modalName');
     const modalRelation = document.getElementById('modalRelation');
     const modalAge = document.getElementById('modalAge');
@@ -263,7 +264,13 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!member) return;
         
         // Actualizar información del modal
-        modalPhoto.innerHTML = `<i class="${member.icon}"></i>`;
+        if (modalImg && member.image) {
+            modalImg.src = member.image;
+            modalImg.alt = member.name;
+            modalImg.style.display = 'block';
+        }
+        
+        // Establecer color del borde
         modalPhoto.style.borderColor = member.color;
         modalName.textContent = member.name;
         modalRelation.textContent = member.relation;
