@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Family Tree - English Project</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="container">
+        <header>
+            <i class="tree-icon fas fa-tree"></i>
+            <h1>The Puertas Salazar Family Tree</h1>
+            <p class="subtitle">An interactive family tree showing relationships, ages, likes, and personalities</p>
+        </header>
+        
+        <div class="intro">
+            <p>Hello! I'm Axel Alexandre Puertas Salazar. This is my English project - a visual family tree of my family.</p>
+            <p>Click on any family member to see details about them. I'm using present simple, present continuous, likes/dislikes, comparatives, and family relationship vocabulary.</p>
+        </div>
+        
+        <!-- Árbol genealógico visual -->
+        <div class="tree-container">
+            <div class="tree">
+                <!-- Conexiones SVG -->
+                <svg class="tree-connections" id="treeConnections"></svg>
+                
+                <!-- Generación 1: Abuela -->
+                <div class="generation" id="generation-1">
+                    <!-- Abuelo materno (fallecido) -->
+                    <div class="tree-member member-deceased" style="opacity: 0.7;" data-member="grandfather">
+                        <div class="member-card">
+                            <div class="member-photo">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <div class="member-name">Unknown</div>
+                            <div class="member-relation">Maternal Grandfather</div>
+                            <div class="member-status">Deceased</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Abuela materna -->
+                    <div class="tree-member" data-member="leonila" id="leonila">
+                        <div class="member-card">
+                            <div class="member-photo">
+                                <i class="fas fa-female"></i>
+                            </div>
+                            <div class="member-name">Leonila Chiroque Anastasio</div>
+                            <div class="member-relation">Maternal Grandmother</div>
+                            <div class="member-year">Mother of Maritza</div>
+                            <div class="member-status">Widowed</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Generación 2: Padres -->
+                <div class="generation" id="generation-2">
+                    <!-- Padre -->
+                    <div class="tree-member" data-member="jose" id="jose">
+                        <div class="member-card">
+                            <div class="member-photo">
+                                <i class="fas fa-male"></i>
+                            </div>
+                            <div class="member-name">José Manuel Puertas Rondoy</div>
+                            <div class="member-relation">My Father</div>
+                            <div class="member-year">Born: 1974 (50 years)</div>
+                            <div class="member-status">Married to Maritza</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Madre -->
+                    <div class="tree-member" data-member="maritza" id="maritza">
+                        <div class="member-card">
+                            <div class="member-photo">
+                                <i class="fas fa-female"></i>
+                            </div>
+                            <div class="member-name">Maritza Salazar Chiroque</div>
+                            <div class="member-relation">My Mother</div>
+                            <div class="member-year">Born: 1967 (57 years)</div>
+                            <div class="member-status">Married to José</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Generación 3: Hermanos -->
+                <div class="generation" id="generation-3">
+                    <!-- Hermana mayor -->
+                    <div class="tree-member" data-member="eyllin" id="eyllin">
+                        <div class="member-card">
+                            <div class="member-photo">
+                                <i class="fas fa-female"></i>
+                            </div>
+                            <div class="member-name">Eyllin María Puertas Salazar</div>
+                            <div class="member-relation">Eldest Sister</div>
+                            <div class="member-year">Born: 1991 (33 years)</div>
+                            <div class="member-status">Separated, has 1 son</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Yo -->
+                    <div class="tree-member" data-member="axel" id="axel">
+                        <div class="member-card" style="border-color: #4c8bf5; border-width: 3px;">
+                            <div class="member-photo" style="border-color: #4c8bf5;">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="member-name">Axel Alexandre Puertas Salazar</div>
+                            <div class="member-relation">Myself</div>
+                            <div class="member-year">Born: 1994 (30 years)</div>
+                            <div class="member-status">Single</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Hermano -->
+                    <div class="tree-member" data-member="diego" id="diego">
+                        <div class="member-card">
+                            <div class="member-photo">
+                                <i class="fas fa-male"></i>
+                            </div>
+                            <div class="member-name">Diego Stefano Puertas Salazar</div>
+                            <div class="member-relation">My Brother</div>
+                            <div class="member-year">Born: 1997 (27 years)</div>
+                            <div class="member-status">Separated, has 2 children</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Hermana menor -->
+                    <div class="tree-member" data-member="ashlly" id="ashlly">
+                        <div class="member-card">
+                            <div class="member-photo">
+                                <i class="fas fa-female"></i>
+                            </div>
+                            <div class="member-name">Ashlly Tatiana Puertas Salazar</div>
+                            <div class="member-relation">Youngest Sister</div>
+                            <div class="member-year">Born: 2004 (20 years)</div>
+                            <div class="member-status">In a relationship</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Generación 4: Nietos y parejas -->
+                <div class="generation" id="generation-4">
+                    <!-- Nieta de Diego -->
+                    <div class="tree-member" data-member="greyshel" id="greyshel">
+                        <div class="member-card" style="background-color: #f9f9f9;">
+                            <div class="member-photo">
+                                <i class="fas fa-child"></i>
+                            </div>
+                            <div class="member-name">Greyshel</div>
+                            <div class="member-relation">Diego's Daughter</div>
+                            <div class="member-year">7-8 years old</div>
+                            <div class="member-status">Lives in Ecuador</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Nieto de Diego -->
+                    <div class="tree-member" data-member="pedro" id="pedro">
+                        <div class="member-card" style="background-color: #f9f9f9;">
+                            <div class="member-photo">
+                                <i class="fas fa-child"></i>
+                            </div>
+                            <div class="member-name">Pedro</div>
+                            <div class="member-relation">Diego's Son</div>
+                            <div class="member-year">1 year old</div>
+                            <div class="member-status">Lives in Piura</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Nieto de Eyllin -->
+                    <div class="tree-member" data-member="neythan" id="neythan">
+                        <div class="member-card" style="background-color: #f9f9f9;">
+                            <div class="member-photo">
+                                <i class="fas fa-baby"></i>
+                            </div>
+                            <div class="member-name">Neythan</div>
+                            <div class="member-relation">Eyllin's Son</div>
+                            <div class="member-year">4 months old</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Novio de Ashlly -->
+                    <div class="tree-member" data-member="ricardo" id="ricardo">
+                        <div class="member-card" style="background-color: #f0f8ff;">
+                            <div class="member-photo">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <div class="member-name">Ricardo</div>
+                            <div class="member-relation">Ashlly's Boyfriend</div>
+                            <div class="member-status">Math teacher & Oil engineer</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Ex de Diego 1 -->
+                    <div class="tree-member" style="opacity: 0.7;" data-member="ex1">
+                        <div class="member-card">
+                            <div class="member-photo">
+                                <i class="fas fa-user-female"></i>
+                            </div>
+                            <div class="member-name">Unknown</div>
+                            <div class="member-relation">Diego's Ex-partner</div>
+                            <div class="member-status">Mother of Greyshel</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Ex de Diego 2 -->
+                    <div class="tree-member" style="opacity: 0.7;" data-member="ex2">
+                        <div class="member-card">
+                            <div class="member-photo">
+                                <i class="fas fa-user-female"></i>
+                            </div>
+                            <div class="member-name">Unknown</div>
+                            <div class="member-relation">Diego's Ex-partner</div>
+                            <div class="member-status">Mother of Pedro</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Ex de Eyllin -->
+                    <div class="tree-member" style="opacity: 0.7;" data-member="ex3">
+                        <div class="member-card">
+                            <div class="member-photo">
+                                <i class="fas fa-male"></i>
+                            </div>
+                            <div class="member-name">Unknown</div>
+                            <div class="member-relation">Eyllin's Ex-partner</div>
+                            <div class="member-status">Father of Neythan</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Modal para detalles -->
+        <div class="modal" id="memberModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="modal-close" id="modalClose">&times;</button>
+                    <div class="modal-photo" id="modalPhoto">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="modal-info">
+                        <h3 id="modalName">Name</h3>
+                        <p id="modalRelation">Relation</p>
+                        <p id="modalAge">Age</p>
+                        <p id="modalStatus">Status</p>
+                    </div>
+                </div>
+                <div class="modal-body" id="modalBody">
+                    <!-- El contenido se llena dinámicamente con JavaScript -->
+                </div>
+            </div>
+        </div>
+        
+        <!-- Sección de comparaciones -->
+        <div class="comparison-section">
+            <h2 class="comparison-title">Family Comparisons & Relationships</h2>
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <h3>Similarities in My Family</h3>
+                    <p>My parents <strong>are married</strong> for many years. My mother and grandmother <strong>both love</strong> cooking. My sisters and I <strong>all value</strong> education. Eyllin, Diego and I <strong>are all</strong> in our 20s and 30s. Ashlly and I <strong>are both studying</strong> right now.</p>
+                    <p>My father and brother <strong>both enjoy</strong> outdoor activities. My mother and Ashlly <strong>are both</strong> very organized people. My grandmother and Eyllin <strong>are both</strong> mothers. All of us <strong>love</strong> family gatherings.</p>
+                </div>
+                <div class="comparison-card">
+                    <h3>Differences in My Family</h3>
+                    <p>My mother <strong>is</strong> older <strong>than</strong> my father. Eyllin <strong>is</strong> the eldest <strong>while</strong> Ashlly <strong>is</strong> the youngest. Diego <strong>has</strong> two children, but I <strong>don't have</strong> any children yet. Ashlly <strong>is studying</strong> law, but I <strong>am interested in</strong> technology.</p>
+                    <p>Eyllin <strong>is separated</strong> from her son's father, but my parents <strong>are still married</strong>. Diego's children <strong>live</strong> in different places, but Eyllin's son <strong>lives</strong> with her. My grandmother <strong>is</strong> from an older generation, but Ashlly <strong>is</strong> from Generation Z.</p>
+                </div>
+                <div class="comparison-card">
+                    <h3>Current Activities & Feelings</h3>
+                    <p>My mother <strong>is enjoying</strong> her garden these days. My father <strong>is planning</strong> a fishing trip. Eyllin <strong>is taking care of</strong> her baby Neythan. Diego <strong>is working</strong> and <strong>visiting</strong> his children when possible.</p>
+                    <p>Ashlly <strong>is studying</strong> law and <strong>teaching</strong> English. She <strong>is dating</strong> Ricardo, who <strong>is teaching</strong> mathematics and <strong>working</strong> as an oil engineer. I <strong>am feeling</strong> happy with my family. We <strong>are all supporting</strong> each other.</p>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>English Project - The Puertas Salazar Family Tree | Created by Axel Alexandre Puertas Salazar</p>
+            <p style="margin-top: 10px;">Click on any family member to see more details about them!</p>
+        </footer>
+    </div>
+    <script type="module" src="main.js"></script>
+</body>
+</html>
